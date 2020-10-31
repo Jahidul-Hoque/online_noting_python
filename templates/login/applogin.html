@@ -99,8 +99,8 @@
 <div class='container'>
 	<div class='window'>
 	<div class='overlay'></div>
-    	<div class='content'>
-    	<div class='welcome'>Hello There!</div>
+    		<div class='content'>
+    		<div class='welcome'>Hello There!</div>
 
 
 
@@ -116,16 +116,17 @@
  {% csrf_token %}
 <button type="submit" class="btn-primary btn-sm"> LOGIN </button>
  		
- 		</div>
- 
-	</div>
-</div>
+
 			
 </form>
 
 <!--{% endif %}-->
 <h3> want to signup? </h3>
 <a href="{% url 'login:signup' %}"> Register here</a>
+ 		</div>
+ 
+	</div>
+</div>		
 	
 {% endblock %}
 
