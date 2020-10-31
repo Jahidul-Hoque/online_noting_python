@@ -1,0 +1,26 @@
+<style type="text/css">
+	.box{
+		background-color: red;
+	}
+</style>
+{% extends 'base.html' %}
+{% load custom_filters %}
+<div class="box">
+	{% block body_block %}
+	{% for a in user.note_author.all %}
+	<h4> {{a.note_title}}</h4>
+	<h5><i> {{a.saving_date}} </i></h5>
+	<div class="row">
+		<div class="col-sm-4">
+			<img src="/media/{{a.note_image}}"
+			alt="{{a.note_title}}" title="{{a.note_title}}" width="50%" height="350">
+		</div>
+		<div class="col-sm-8"><p>{{a.note_content|range_filter|linebreaks}} <a href="{% url 'noting:note_detail' slug=a.slug %}"> read more </a></p>
+			
+		</div>
+	</div>
+	<a class="btn btn-primary active" href="{% url 'noting:edit_blog' slug=a.slug %}"> edit blog</a>
+	<hr>
+	{% endfor %}
+	{% endblock %}
+</div>

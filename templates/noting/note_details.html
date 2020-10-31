@@ -1,0 +1,22 @@
+<style type="text/css">
+	body{
+		background-image: url("/media/backgroundimg/note.jpg");
+		background-size: 1366px 768px;
+	}
+</style>
+{% extends 'base.html' %}
+
+{% block body_block %}
+
+
+				<h2>{{note.note_title}}</h2>
+				<h2>{{note.saving_date}}</h2>
+	
+		<img src="/media/{{note.note_image}}" width="250" height="250">
+		<p>{{note.note_content|linebreaks}}</p>
+
+	
+	<hr>
+
+
+{% endblock %}

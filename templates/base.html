@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    
+    
+    <meta charset="utf-8">
+     
+
+      <link rel="stylesheet" type="text/css"  href="./style.css" media="1">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+     <meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+
+
+
+
+
+     
+     <title>{% block title_block %} Notes {% endblock %}</title>
+
+  </head>
+  <body>
+        <nav class="navbar navbar-expand-sm ">
+            <ul class="navbar-dark">
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'index'%}"><img src="/media/logo.png" width="100" height="100"></a>
+              </li>
+            </ul>
+        </nav>
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          More
+        </button>
+
+
+        <div class="dropdown-menu">
+          
+            
+              <a class="dropdown-item" href="{%url 'noting:note_list'%}">Home</a>
+           
+
+            
+              <a class="dropdown-item" href="{%url 'login:logout_user'%}"> Logout </a>
+            
+
+            
+              <a class="dropdown-item" href="{%url 'login:profile'%}"> Profile </a>
+
+
+              <a class="dropdown-item" href="{%url 'noting:make_note' %}"> Make Note </a> 
+            
+
+        </div>
+
+      </div>
+      
+    {% block body_block %}
+    {% endblock %}
+  </body>
+</html>
